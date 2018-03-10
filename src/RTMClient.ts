@@ -101,9 +101,8 @@ export class RTMClient extends EventEmitter {
                   // cannot think of a way this would have been triggered.
 
                   // capture identity information
-                  // TODO: remove type casts
-                  this.activeUserId = (result as any).self.id;
-                  this.activeTeamId = (result as any).team.id;
+                  this.activeUserId = result.self.id;
+                  this.activeTeamId = result.team.id;
 
                   return result;
                 });

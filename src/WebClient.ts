@@ -620,6 +620,7 @@ export interface WebAPICallResult {
   acceptedScopes?: string[];
   retryAfter?: number;
   response_metadata?: { warnings?: string[] };
+  [additional: string]: any;
 }
 
 export interface WebAPIResultCallback {
