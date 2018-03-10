@@ -27,8 +27,6 @@
   },
   "scripts": {
     "prepublish": "npm run build",
-    "precommit": "lint-staged",
-    "prepush": "npm run build",
     "lint": "tslint --project .",
     "test": "npm run test:spec",
     "test:spec": "nyc mocha --opts src/mocha.opts src/*.spec.js src/**/*.spec.js",
