@@ -43,8 +43,17 @@ export interface MessageAttachment {
     footer_icon?: string;
     ts?: string;
     actions?: {
-        type: string;
+        type: 'button' | 'select';
         text?: string;
+        name?: string;
+        value?: string;
+        style?: 'default' | 'primary' | 'danger';
+        options?: any;
+        option_groups?: any;
+        data_source?: 'static' | 'users' | 'channels' | 'conversations' | 'external';
+        selected_options?: any;
+        confirm?: any;
+        min_query_length?: any;
     }[];
 }
 export interface LinkUnfurls {

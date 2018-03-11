@@ -59,9 +59,18 @@ export interface MessageAttachment {
   footer?: string;
   footer_icon?: string; // footer must be present
   ts?: string;
-  actions?: { // note: this is a very minimal definition of link buttons, interactive buttons, and message menus
-    type: string;
+  actions?: {
+    type: 'button'|'select';
     text?: string;
+    name?: string;
+    value?: string;
+    style?: 'default'|'primary'|'danger';
+    options?: any;
+    option_groups?: any;
+    data_source?: 'static'|'users'|'channels'|'conversations'|'external';
+    selected_options?: any;
+    confirm?: any;
+    min_query_length?: any;
   }[];
 }
 
