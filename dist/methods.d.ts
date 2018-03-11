@@ -3,8 +3,11 @@ import { WebAPICallOptions, WebAPIResultCallback, WebAPICallResult } from './Web
  * Generic method definition
  */
 export default interface Method<MethodArguments extends WebAPICallOptions> {
-    (options?: MethodArguments): Promise<WebAPICallResult>;
-    (options: MethodArguments, callback: WebAPIResultCallback): void;
+    (options?: MethodArguments & AuxiliaryArguments): Promise<WebAPICallResult>;
+    (options: MethodArguments & AuxiliaryArguments, callback: WebAPIResultCallback): void;
+}
+export interface AuxiliaryArguments {
+    [unknownArg: string]: any;
 }
 export interface TokenOverridable {
     token?: string;
